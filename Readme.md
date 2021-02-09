@@ -20,9 +20,12 @@ Soit avec un link internet menant a bootstrap
 Dans application > config > autoload.php
     $autoload['helper'] = array('url');
 
+# Penser à changer l'url par défault (localhost si dev en local)
 
 
-- change default url for localhost prject
+
+
+
 - create table
 - select record from database (create model)
 - load session and database library
