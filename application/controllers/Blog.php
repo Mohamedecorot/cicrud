@@ -10,6 +10,15 @@ class Blog extends CI_Controller {
 
 	function index(){
 		$data['blogs'] = $this->m->getData();
+		$this->load->view('layout/header');
 		$this->load->view('blog/index', $data);
+		$this->load->view('layout/footer');
+	}
+
+	function add(){
+		$data['blogs'] = $this->m->getData();
+		$this->load->view('layout/header');
+		$this->load->view('blog/add', $data);
+		$this->load->view('layout/footer');
 	}
 }

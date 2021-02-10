@@ -31,14 +31,7 @@ Soit avec un link internet menant a bootstrap
    Dans application > config > autoload.php
     $autoload['libraries'] = array('database', 'session');
 
-
-
-
-
-
-- load session and database library
-- create fun
-Dans application > config > autoload.php
+ - Dans application > config > autoload.php
     $autoload['helper'] = array('url');
 
 # Penser à changer l'url par défault (localhost si dev en local)
@@ -48,6 +41,24 @@ Dans application > config > config.php
 # Creer un model pour interagir avec la bdd
     Dans application > models
     Creer un fichier (commençant par une maj), avec une class qui extends de CI_Model
+
+# Charger le model dans le controller
+    $this->load->model('nomdelatable');
+
+# Envoyer les données à la vue par l'intermédiaire du controller
+    $data['datas'] = $this->nomdelatable->getData();
+	$this->load->view('vue', $data);
+
+# Dans la vue, afficher les données reçus
+    <?php
+    if($blogs){
+        foreach($datas as $data){
+    ?>
+    <tr>
+        <td><?= $data->id; ?></td>
+        <td><?= $data->....; ?></td>
+    </tr>
+
 
 
 - add form (seprate layout header and footer first)
