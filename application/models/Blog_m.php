@@ -52,4 +52,14 @@ class Blog_m extends CI_Model {
             return false;
         }
     }
+
+    public function delete($id){
+        $this->db->where('id', $id);
+        $this->db->delete('tbl_blogs');
+        if($this->db->affected_rows() > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

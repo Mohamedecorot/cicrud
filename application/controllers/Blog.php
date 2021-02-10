@@ -48,4 +48,14 @@ class Blog extends CI_Controller {
 		}
 		redirect(base_url('blog/index'));
 	}
+
+	public function delete($id){
+		$result = $this->m->delete($id);
+		if($result) {
+			$this->session->set_flashdata('success_msg', 'Suppression réussit');
+		}else{
+			$this->session->set_flashdata('error_msg', 'Echec de la suppression');
+		}
+		redirect(base_url('blog/index'));
+	}
 }

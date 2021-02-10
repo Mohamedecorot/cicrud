@@ -45,7 +45,7 @@
                     <td><?= $blog->created_at; ?></td>
                     <td>
                         <a href="<?= base_url('blog/edit/'.$blog->id); ?>" class="btn btn-info">Edit</a>
-                        <a href="<?= base_url('blog/delete/'.$blog->id); ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this record?');">Delete</a>
+                        <a href="<?= base_url('blog/delete/'.$blog->id); ?>" class="btn btn-danger" onclick="return confirm('Voulez-vous vraiment supprimer cette donnée ?');">Delete</a>
                     </td>
                 </tr>
             <?php

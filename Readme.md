@@ -60,7 +60,6 @@ Dans application > config > config.php
     </tr>
 
 
-
-- add form (seprate layout header and footer first)
-- update record
-- delete record
+# Source :
+    https://www.youtube.com/watch?v=7d_4CpA2uHI
+    code source: https://goo.gl/0ZK0BJ
