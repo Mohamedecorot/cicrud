@@ -16,21 +16,40 @@ Soit localement :
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
 Soit avec un link internet menant a bootstrap
 
-# Charger le helper url
+# Charger le helper url'http://localhost:8000/';
+
+# Creer une base de données et lire (select) les données s'y trouvant
+ - Entrer les informations dans application > config > database.php
+    $db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'root',
+	'database' => 'codeigniter'
+    ....
+ - Charger les librairies database et session dans l'autoload
+   Dans application > config > autoload.php
+    $autoload['libraries'] = array('database', 'session');
+
+
+
+
+
+
+- load session and database library
+- create fun
 Dans application > config > autoload.php
     $autoload['helper'] = array('url');
 
 # Penser à changer l'url par défault (localhost si dev en local)
+Dans application > config > config.php
+    $config['base_url'] = ction for getting data from database
+
+# Creer un model pour interagir avec la bdd
+    Dans application > models
+    Creer un fichier (commençant par une maj), avec une class qui extends de CI_Model
 
 
-
-
-
-- create table
-- select record from database (create model)
-- load session and database library
-- create function for getting data from database
-- load model in controller
 - add form (seprate layout header and footer first)
 - update record
 - delete record

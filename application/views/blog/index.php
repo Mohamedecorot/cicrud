@@ -31,16 +31,24 @@
                 </tr>
             </thead>
             <tbody>
+            <?php
+                if($blogs){
+                    foreach($blogs as $blog){
+            ?>
                 <tr>
-                    <td>id</td>
-                    <td>title</td>
-                    <td>description</td>
-                    <td>created_at</td>
+                    <td><?= $blog->id; ?></td>
+                    <td><?= $blog->title; ?></td>
+                    <td><?= $blog->description; ?></td>
+                    <td><?= $blog->created_at; ?></td>
                     <td>
                         <a href="<?= base_url('blog/edit/'); ?>" class="btn btn-info">Edit</a>
                         <a href="<?= base_url('blog/delete/'); ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this record?');">Delete</a>
                     </td>
                 </tr>
+            <?php
+                    }
+                }
+            ?>
             </tbody>
         </table>
 
