@@ -26,4 +26,30 @@ class Blog_m extends CI_Model {
             return false;
         }
     }
+
+    public function getDataId($id){
+        $this->db->where('id', $id);
+        $query = $this->db->get('tbl_blogs');
+        if($query->num_rows() > 0){
+            return $query->row();
+        }else{
+            return false;
+        }
+    }
+
+    public function update(){
+        $id = $this->input->post('text_hidden_id');
+        $field = array(
+            'title'=>$this->input->post('txt_title'),
+            'description'=>$this->input->post('txt_description'),
+            'updated_at'=>date('Y-m-d H:i:s')
+        );
+        $this->db->where('id', $id);
+        $this->db->update('tbl_blogs', $field);
+        if($this->db->affected_rows() > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

@@ -15,7 +15,7 @@
         <?php
             if($this->session->flashdata('error_msg')){
         ?>
-            <div class="alert alert-success">
+            <div class="alert alert-error">
                 <?php echo $this->session->flashdata('error_msg'); ?>
             </div>
         <?php
@@ -44,8 +44,8 @@
                     <td><?= $blog->description; ?></td>
                     <td><?= $blog->created_at; ?></td>
                     <td>
-                        <a href="<?= base_url('blog/edit/'); ?>" class="btn btn-info">Edit</a>
-                        <a href="<?= base_url('blog/delete/'); ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this record?');">Delete</a>
+                        <a href="<?= base_url('blog/edit/'.$blog->id); ?>" class="btn btn-info">Edit</a>
+                        <a href="<?= base_url('blog/delete/'.$blog->id); ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this record?');">Delete</a>
                     </td>
                 </tr>
             <?php
