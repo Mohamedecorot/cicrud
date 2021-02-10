@@ -21,4 +21,14 @@ class Blog extends CI_Controller {
 		$this->load->view('blog/add', $data);
 		$this->load->view('layout/footer');
 	}
+
+	function submit(){
+		$result = $this->m->submit();
+		if($result) {
+			$this->session->set_flashdata('success_msg', 'Ajout réussit');
+		}else{
+			$this->session->set_flashdata('error_msg', 'Echec de l\'ajout');
+		}
+		redirect(base_url('blog/index'));
+	}
 }
